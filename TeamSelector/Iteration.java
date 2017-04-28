@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 //This class is used as a data type for storing a complete distribution iteration of members onto teams
 //and doing actions on them
+//Quick change
 public class Iteration {
 	// Reference to an array of iterations
 	private static ArrayList<Iteration> iterationList = new ArrayList<Iteration>();
