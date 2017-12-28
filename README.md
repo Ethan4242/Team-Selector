@@ -1,6 +1,7 @@
 ## Synopsis
-is
-The Team Selector project assigns people to projects. The program will take the inputed data, and output a close to optimal assignment in seconds. This output file lists the members of each project and the average on the team for each factor (Ex: Year in school, ability, cost, etc..)
+The Team Selector project assigns people to projects. 
+
+The program will take the inputed data, and output a close to optimal assignment in seconds. This output file lists the members of each project and the average on the team for each factor (Ex: Year in school, ability, cost, etc..)
 
 Members can be a person, object or place and a project can be a team or location. Is it maleable and can be used for many different applications. All it takes is the creativity of the user.
 
@@ -30,7 +31,17 @@ This application has cut down the assignment of 100 members from 4 hours to 2 or
 Additionally, this has been a learning experience for the developers, so this is not meant to be a commercial application. This is meant to give people a way of assigning members to teams in an easy way.
 
 ## Installation
-git clone 
+1) Type the code below in the command shell or terminal.
+git clone https://github.com/Ethan4242/Team-Selector.git
+
+2) Download the appropriate project and member templates
+
+3) Save the templates in the same folder as the .java files.
+
+4) Compile the program using javac *.java in the terminal after cd Team-Selector
+
+5) Run the program by typing
+java TeamSelector
 
 ## Contributors
 
