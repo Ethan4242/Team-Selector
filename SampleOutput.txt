@@ -1,0 +1,29 @@
+Team	Member	Member	Member	Member	Member	Member	Year Average	Coding Average	Fabrication Average	Business Average	Leader Average	
+StockSelectingProgram	KeeganMoldenhauer	EliKrenzke	RobertoO'Dogherty	YogeshBalajeMahendran	SaeedAlqubaisi	BenHermann	2.6666666666666665	6.0	3.1666666666666665	5.666666666666667	8.333333333333334	
+OilExtractingDeviceandWorkshop	JacobVolcensek	ManthraVenkatakrishnan	ZachEhmer	DanicaFliss	KirstenMaxwell	MarkDiny	2.1666666666666665	3.6666666666666665	6.166666666666667	4.333333333333333	6.333333333333333	
+MicrobreweryDevelopmentalGlass	KyleFaber	JoshMerchant	AbhiKosuri	AngelaHoughtaling	MaeganO'Donnell	LucasPflug	2.5	3.6666666666666665	5.666666666666667	5.0	7.0	
+AffordableandPortableElectromyography	KatieBajkowski	michaelSchears	LilyRoudebush	ColleenStaeger	AlexMartinez	BrookePernsteiner	1.8333333333333333	3.1666666666666665	3.8333333333333335	4.5	6.666666666666667	
+3D-Clinostat	MichaelTuchler	TierneyKilgariff	WeiWu	JaredStraka	Matthew	DerekWautlet	1.8333333333333333	4.5	6.333333333333333	4.166666666666667	6.666666666666667	
+RepositioningofPatientsinO.R.	ChrisHanko	KaiPeterson	BenKrimpelbein	IsabellaLenz	AlexPlum	MalachiAlvarez	1.8333333333333333	3.5	6.166666666666667	5.833333333333333	7.5	
+ElectropolishingMachine	MuradJaber	AlexisNicolas	JustinHoffland	WillClaridge	JoanChen	JunhaSeol	1.6666666666666667	2.3333333333333335	4.833333333333333	4.333333333333333	6.166666666666667	
+AutomatedCollectionofCO2Data	GalenGiese	CalvinHenderson	ZhengyangGuo	ShuaiZhang	DonglinWang		1.4	5.2	5.6	3.4	6.4	
+MakeathonProject	AlecHill	DavidLahm	Yuchengu	SethEiseman	IsabelForeman-Ortiz		3.0	5.2	6.4	7.8	8.2	
+EfficientIce-CreamDispenser							
+AutomatedWateringPlantPot	FaisalAlHosani	AustinSprackling	EmikVayts	TrentonFeda	SarahMcLeod		1.6	3.2	3.8	4.4	6.4	
+WebDevelopmentforPathogenomica	AkshatKhanna	OmjaaRai	LauraRodricks	NickPeterson	DawanitSatitsumpun		1.4	6.8	3.8	5.4	7.6	
+AppforInternationalStudents	ZakariaKofiro	YanXiao	StephenYuan	PranavJulakanti			1.5	5.0	2.75	5.5	5.0	
+BioinformaticsFlowOptimization	MattKizaric	MollyWetzel	MonicaSelvaraj	SonomaBrill			2.75	6.5	4.25	5.75	6.5	
+WheelhouseStudiosRampRedesign							
+ThermalPlantHeater							
+Go-Baby-Go							
+SaladVendingMachine							
+VibratingPipes							
+WaterQualityMonitor							
+BringingNaturalWorldtoWheelhouseStudios							
+PlantClock							
+InternationalApp							
+
+Not Selected Members
+SarahNeufcourt
+KaibiaoRuan
+SarahBangen

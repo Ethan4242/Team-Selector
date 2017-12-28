@@ -1,0 +1,23 @@
+FILE FORMATTING
+
+This file contains formatting constriants for the input files. If these are not followed, there will be errors.
+
+NOTE: ALL HEADERS AND NAMES MUST HAVE NO SPACES.
+
+
+
+PROJECT FILE
+1) This file must contain ALL of the projects that are options for members. If there is a project that a member selects and it is not in the project file, then there will be an error.
+
+2) Additional factors can be included in subsequent columns, although they are not used in any calculations. This can be a feature added later. 
+2.a) NOTE: If factors are added, make sure each project has a value in the column (It can be just a 0). There will be an error otherwise.
+
+
+MEMBER FILE
+1) The first column is the name of the member.
+
+2) The next columns are the project selection for that member. There can be blank columns, but the header must have project in it (No spaces). Also, there can't be a blank for the third project and then have a choce for the fourth. The blanks can only come at the end. There can be as many project choices as you would like, as long as there is the word project somewhere in the header.
+
+3) After the projects, there is a continuing projects option. If it is a 1, then the team member will be put on the their first choice if it is an option still. Otherwise, put 0.
+
+4) Afterwards, you can put in factors. These factors are the way that you decide priority for who gets to be put on the team first. You can place as many factors as you would like, but if you put in a factor, then you must put a value for every member (it can be 0).
