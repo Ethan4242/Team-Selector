@@ -5,16 +5,20 @@ The Team Selector project assigns people to projects. The program will take the 
 Members can be a person, object or place and a project can be a team or location. Is it maleable and can be used for many different applications. All it takes is the creativity of the user.
 
 ## Main Method Code Example
+Here is a brief example of the main sequence of the program. The program is meant to be run with the correct input files and then prompts the user for data needed.
 
 // Gets all of the Projects and the Members from the files
+
 allProjects = reader.inputProjectInfo(minMem, maxMem,projectFileName);
 allMembers = reader.inputMemberInfo(allProjects, memberFileName);
 
 // Determines which projects are most popular and sorts the list
+
 calculateProjectPopularity(allMembers);
 sortByProjectScore(allProjects);
 
 // Assigns members to teams and outputs to a file
+
 runSimulation(outFileName);
 
 ## Motivation
