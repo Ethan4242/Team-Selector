@@ -77,54 +77,11 @@ public class TeamSelector {
 			calculateProjectPopularity(allMembers);
 
 			sortByProjectScore(allProjects);
-
-			run();
-
+			
+			runSimulation(outFileName);
+			
 			scnr.close();
-
-			boolean reached = false;
-
-			// Loops As long as concatList < 1 or min not found
-			while (true) {
-				System.out.println("_______________________________________");
-				// Loops through all projects and eliminates projects that are
-				// assigned
-				// less than min members and then resets/reruns the assignment
-				for (int i = allProjects.size() - 1; i >= 0; i--) {
-					if (allProjects.get(i).getNumMembers() < allProjects.get(i)
-							.getminMembers() & allProjects.get(i).getActive()) {
-
-						allProjects.get(i).setActive(false);
-						Project.resetMembers(allProjects);
-						run();
-						i = allProjects.size() - 1;
-					}
-				}
-
-				// Adds the successful iteration to a master list
-				concatList.add(generator.generateConcatenation());
-
-				// Prints final distribution if min found
-				if (!checkMinNotSelected()) {
-					generator.printFinalDistribution(
-							concatList.get(concatList.size() - 2), outFileName);
-					reached = true;
-					break;
-				}
-
-				// Resets for next iteration if min not found
-				for (int i = 0; i < allProjects.size(); i++) {
-					allProjects.get(i).setActive(true);
-					Project.resetMembers(allProjects);
-				}
-
-			}
-
-			// Prints final distribution if best was the last change
-			if (!reached) {
-				generator.printFinalDistribution(
-						concatList.get(concatList.size() - 1), outFileName);
-			}
+			
 		} catch (Exception e) {
 			System.out.println(
 					"Exception thrown. Check the excel file for correct input. Then get a developer.");
@@ -221,6 +178,60 @@ public class TeamSelector {
 
 		return (tempLast > tempCurrent);
 
+	}
+	
+	/**
+	 * Runs a loop that will run simulations until the best one is found.
+	 * 
+	 * @param outFileName: The name of the file that will be written to
+	 */
+	private static void runSimulation(String outFileName) {
+		
+		run(); //Runs the initial sim
+		
+		boolean reached = false;
+
+		// Loops As long as concatList < 1 or min not found to find best iteration
+		while (true) {
+			System.out.println("_______________________________________");
+			// Loops through all projects and eliminates projects that are
+			// assigned
+			// less than min members and then resets/reruns the assignment
+			for (int i = allProjects.size() - 1; i >= 0; i--) {
+				if (allProjects.get(i).getNumMembers() < allProjects.get(i)
+						.getminMembers() & allProjects.get(i).getActive()) {
+
+					allProjects.get(i).setActive(false);
+					Project.resetMembers(allProjects);
+					run();
+					i = allProjects.size() - 1;
+				}
+			}
+
+			// Adds the successful iteration to a master list
+			concatList.add(generator.generateConcatenation());
+
+			// Prints final distribution if min found
+			if (!checkMinNotSelected()) {
+				generator.printFinalDistribution(
+						concatList.get(concatList.size() - 2), outFileName);
+				reached = true;
+				break;
+			}
+
+			// Resets for next iteration if min not found
+			for (int i = 0; i < allProjects.size(); i++) {
+				allProjects.get(i).setActive(true);
+				Project.resetMembers(allProjects);
+			}
+
+		}
+
+		// Prints final distribution if best was the last change
+		if (!reached) {
+			generator.printFinalDistribution(
+					concatList.get(concatList.size() - 1), outFileName);
+		}
 	}
 
 }
