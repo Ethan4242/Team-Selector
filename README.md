@@ -8,6 +8,8 @@ Members can be a person, object or place and a project can be a team or location
 ## Main Method Code Example
 Here is a brief example of the main sequence of the program. The program is meant to be run with the correct input files and then prompts the user for data needed.
 
+Algorithm: Assigns all members to first choices, checks which team does not have enough people, deactivates that, and then reruns assignment without assigning to the deactivated team. This is repeated until all teams have enough members.
+
 
 // Gets all of the Projects and the Members from the files
 
@@ -36,7 +38,7 @@ Additionally, this has been a learning experience for the developers, so this is
 1) Type the code below in the command shell or terminal.
 git clone https://github.com/Ethan4242/Team-Selector.git
 
-2) Download the appropriate project and member templates
+2) Download the appropriate project and member templates (See file format instructions)
 
 3) Save the templates in the same folder as the .java files.
 
@@ -46,5 +48,7 @@ git clone https://github.com/Ethan4242/Team-Selector.git
 java TeamSelector
 
 ## Contributors
+
+Original Authors: Ethan Young and David Seamon
 
 This is an open source project that anyone can contribute to. Feel free to locate issues and add features to this project.
