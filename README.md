@@ -8,9 +8,11 @@ Members can be a person, object or place and a project can be a team or location
 ## Main Method Code Example
 Here is a brief example of the main sequence of the program. The program is meant to be run with the correct input files and then prompts the user for data needed.
 
+
 // Gets all of the Projects and the Members from the files
 
 allProjects = reader.inputProjectInfo(minMem, maxMem,projectFileName);
+
 allMembers = reader.inputMemberInfo(allProjects, memberFileName);
 
 // Determines which projects are most popular and sorts the list
