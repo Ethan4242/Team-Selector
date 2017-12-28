@@ -1,6 +1,6 @@
 ## Synopsis
 
-At the top of the file there should be a short introduction and/ or overview that explains **what** the project is. This description should match descriptions added for package managers (Gemspec, package.json, etc.)
+The Team Selector project is a software application that can be used to assign members to projects. Members can be a person, object or place and a project can be a team or location. Is it maleable and can be used for many different applications. The program will take the inputed data, and output a close to optimal assignment in a seconds.
 
 ## Code Example
 
