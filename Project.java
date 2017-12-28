@@ -1,215 +1,207 @@
 import java.util.ArrayList;
 
+/**
+ * This class is used to represent a project that members can be assigned to. It
+ * holds the current members in the list and any other factors pertinent to the
+ * project.
+ * 
+ * @author Ethan Young and David Seamon
+ */
 public class Project {
-	//all of the data fields that are read in from the file
-	private String projectName;
-	private Integer projectPriority;
-	private Integer difficulty;
-	private Integer cost;
-	private Integer minMembers;
-	private Integer maxMembers;
-	private Integer timeCommitment; //1 is low, 2 is medium, 3 is High
-	private ArrayList<Integer> skills;
-	private Integer numOpenSpots;
-	ArrayList<Member> members;
-	private Integer projectScore;
-	private boolean active;
-	private double totalTime;
-	private int day1Count;
-	private int day2Count;
-	private boolean day1Assigned;
-	private boolean day2Assigned;
-	private boolean switched;
-	
+	private String projectName; // Name of the project
+	private Integer minMembers; // Minimum number of members allowed
+	private Integer maxMembers; // Maximum number of members allowed
+	private ArrayList<Integer> factors; // Inputted factors for the project
+	private Integer numOpenSpots; // Number of spots still open on the team
+	ArrayList<Member> members; // List of members currently on the project
+	private Integer projectScore; // The amount of interest by the members
+	private boolean active; // Whether a project is allowed to be assigned
+							// members in the iteration
+
 	/**
-	 * Inputs all of the  data from the file into Project objects
+	 * Inputs all of the data from the file into Project objects
+	 * 
+	 * @param projectName:
+	 *            Name of the project
+	 * @param inData:
+	 *            The data pulled from the spreadsheet
+	 * @param minMem:
+	 *            minimum members allowed
+	 * @param maxMem:
+	 *            maximum members allowed
 	 */
-	public Project(String projectName, ArrayList<Integer>intData) {
+	public Project(String projectName, ArrayList<Integer> inData, int minMem,
+			int maxMem) {
+		// Initialize the arrays
 		members = new ArrayList<Member>();
-		skills = new ArrayList<Integer>();
+		factors = new ArrayList<Integer>();
+
 		this.projectName = projectName;
-		projectPriority = intData.get(0);
-		difficulty = intData.get(1);
-		cost = intData.get(2);
-		minMembers = intData.get(3);
-		maxMembers = intData.get(4);
-		timeCommitment = intData.get(5);
-		skills.add(intData.get(6));
-		skills.add(intData.get(7));
-		skills.add(intData.get(8));
-		numOpenSpots = maxMembers;
+		minMembers = minMem;
+		maxMembers = maxMem;
+
+		// Adds factors to arrayList
+		for (int i = 0; i < inData.size(); i++)
+			factors.add(inData.get(i));
+
+		numOpenSpots = maxMem;
 		projectScore = 0;
+
+		// Initially in the rotation
 		active = true;
 	}
-	
-	public void addMember(Member currentMember) {
-		members.add(currentMember);
+
+	/**
+	 * This method adds members to the current project.
+	 * 
+	 * @param member
+	 *            This is the member that needs to be added to the list
+	 */
+	public void addMember(Member member) {
+		members.add(member);
 		numOpenSpots--;
 	}
-	
+
+	/**
+	 * This method adds members to the current project.
+	 * 
+	 * @return True if spots open, false otherwise
+	 */
 	public boolean isFull() {
-		if (numOpenSpots <= 0) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return (numOpenSpots <= 0);
 	}
-	
-	public void setSwitch() {
-		switched = true;
-	}
-	
-	public boolean getSwitch() {
-		return switched;
-	}
-	
-	public void addDay1Count(int score) {
-		day1Count += score;
-	}
-	
-	public void addDay2Count(int score) {
-		day2Count += score;
-	}
-	
-	public void assignDay1() {
-		day1Assigned = true;
-		day2Assigned = false;
-	}
-	
-	public void assignDay2() {
-		day1Assigned = false;
-		day2Assigned = true;
-	}
-	
-	public boolean getDay1() {
-		return day1Assigned;
-	}
-	
-	public boolean getDay2() {
-		return day2Assigned;
-	}
-	
+
+	/**
+	 * This method indicates how many members are assigned to the current
+	 * project
+	 * 
+	 * @return The number of members on the project
+	 */
 	public int getNumMembers() {
 		return maxMembers - numOpenSpots;
 	}
-	
+
+	/**
+	 * This method returns the number of members required for this to be a
+	 * project
+	 * 
+	 * @return Minimum allowed number of members
+	 */
 	public int getminMembers() {
 		return minMembers;
 	}
-	
-	public ArrayList<Member> getMembers () {
+
+	/**
+	 * This method returns the max number of members required for this to be a
+	 * project
+	 * 
+	 * @return Maximum allowed number of members
+	 */
+	public int getMaxMembers() {
+		return maxMembers;
+	}
+
+	/**
+	 * This method indicates allows for the access of the members on the project
+	 * 
+	 * @return the member list for the project
+	 */
+	public ArrayList<Member> getMembers() {
 		return members;
 	}
-	
+
+	/**
+	 * @return The name of the project
+	 */
 	public String getName() {
 		return projectName;
 	}
-	
+
+	/**
+	 * This method sets whether a project is valid for the iteration
+	 */
 	public void setActive(boolean value) {
-		if (value == false) {
-			this.active = false;
-		}
-		else {
-			this.active = true;
-		}
+		active = value;
 	}
-	
+
+	/**
+	 * This method indicates if project is active for the current iteration
+	 * 
+	 * @return whether the project is active
+	 */
 	public boolean getActive() {
-		return this.active;
+		return active;
 	}
-	
-	public Integer getTimeCommitment() {
-		return timeCommitment;
-	}
-	
+
+	/**
+	 * This method indicates the total score for the project based on the
+	 * members assigned
+	 * 
+	 * @return The total project score
+	 */
 	public Integer getProjectScore() {
 		return projectScore;
 	}
-	
-	public Integer getDay1Score() {
-		return day1Count;
-	}
-	
-	public Integer getDay2Score() {
-		return day2Count;
-	}
-	
+
+	/**
+	 * STATIC MOVE TO DIFFERENT CLASS This method resets each project's assigned
+	 * members for use in the next iteration
+	 * 
+	 * @param the
+	 *            Arraylist of projects to reset
+	 */
 	public static void resetMembers(ArrayList<Project> allProjects) {
+
+		// Loops through the projects to reset members and number of open spots
 		for (int i = 0; i < allProjects.size(); ++i) {
 			allProjects.get(i).members = new ArrayList<Member>();
 			allProjects.get(i).numOpenSpots = allProjects.get(i).maxMembers;
 		}
 	}
-	
-	//Calculates the average year for a given project
-	public Double calculateAverageYear() {
-		int totalYear = 0;
+
+	/**
+	 * This method calculates the average for that factor across all members on
+	 * the project
+	 * 
+	 * @param index:
+	 *            This is the index of the factor of interest
+	 * 
+	 * @return the cumulative project score
+	 */
+	public Double calculateAverageFactor(int index) {
+		double total = 0;
+
+		// Calculates the average for that factor
 		for (int i = 0; i < members.size(); ++i) {
-			totalYear =+ members.get(i).getYear();
+			total = total + members.get(i).getFactor(index).getValue();
 		}
-		
-		Double averageYear = (double)totalYear / members.size();
-		return averageYear;
+
+		Double average = total / members.size();
+		return average;
 	}
-	
-	public Double calculateAverageRanking() {
-		double totalRanking = 0;
-		for (int i = 0; i < members.size(); ++i) {
-			totalRanking =+ members.get(i).getPriorityRanking();
-		}
-		
-		Double averageYear = (double)totalRanking / members.size();
-		return averageYear;
-	}
-	
-	public Double calculateProjectFit(Member potentialMember) {
-		double projectScore = 0;
-		for (int i = 0; i < potentialMember.getSkills().size(); ++i) {
-			projectScore =+ (double)potentialMember.getSkills().get(i) * skills.get(i);
-		}
-		
-		return projectScore;
-	}
-	
-	public Double calculateTimeCommitment() {
-		Integer totalTime = 0;
-		for (int i = 0; i < members.size(); ++i) {
-			totalTime =+ members.get(i).getTimeCommitment();
-		}
-		return (double)totalTime/this.members.size();
-	}
-	
+
 	public void increaseProjectScore(int value) {
 		this.projectScore += value;
 	}
-	
-	//Calculates the total project score, the average member choice, average year, average time commitment match, average experience, etc..
-	public void calculateStatistics() {
-		
-	}
+
+	/**
+	 * This is the toString() comparable implementation. The format is..
+	 * 
+	 * projectName: member1 member2 ...
+	 * 
+	 * @return A string with information for the project
+	 */
 	public String toString() {
 		String toReturn = null;
+
 		toReturn = projectName + ": \n";
+
+		// Loops through all of the members
 		for (int i = 0; i < members.size(); i++) {
 			toReturn += members.get(i).getName() + "\n";
 		}
+
 		return toReturn + "\n";
-				
-	}
-	
-	public boolean dayMatch(Member currentMember) {
-		if (this.getDay1() == true && currentMember.getDay1() == true) {
-			return true;
-		}
-		
-		else if (this.getDay2() == true && currentMember.getDay2() == true) {
-			return true;
-		}
-		
-		else {
-			return false;
-		}
-		
+
 	}
 }
