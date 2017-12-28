@@ -1,5 +1,5 @@
 ## Synopsis
-The Team Selector project assigns people to projects. 
+The Team Selector assigns people to projects. 
 
 The program will take the inputed data, and output a close to optimal assignment in seconds. This output file lists the members of each project and the average on the team for each factor (Ex: Year in school, ability, cost, etc..)
 
